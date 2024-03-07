@@ -7,6 +7,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { CardModule } from 'primeng/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CardModule
+    CardModule,
+    InputTextModule,
+    ReactiveFormsModule,
+    ButtonModule
   ],
   providers: [
     provideClientHydration()

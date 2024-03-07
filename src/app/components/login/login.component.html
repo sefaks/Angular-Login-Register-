@@ -1,9 +1,29 @@
-<form>
+<form [formGroup]="loginForm">
 
-    <p-card header="Title">
-        <p class="m-0">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-            quas!
-        </p>
+    <p-card header="Login" [style] = "{width: '370px'}">
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="text" 
+            pInputText 
+            formControlName="email"
+            class="w-full"
+             name="email"
+             placeholder="Type your e mail"
+              />
+        </div>
+        <div class="field">
+            <label for="password">Password</label>
+            <input type="password" 
+            pInputText 
+            formControlName="password"
+            class="w-full"
+             name="password"
+             placeholder="Type your password"
+              />
+        </div>
+        <p-button label="Sign IN" styleClass="w-full"></p-button>
+        <div class="mt-2">
+            Not a member? <a routerLink="/register" > Register</a>
+        </div>
     </p-card>
 </form>

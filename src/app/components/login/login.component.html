@@ -10,7 +10,14 @@
              name="email"
              placeholder="Type your e mail"
               />
+              <small *ngIf = "email.invalid && (email.dirty || email.touched) " class="block p-error ">
+              <div *ngIf ="email.errors?.['required']"> E mail is required</div>
+              <div *ngIf ="email.errors?.['email']"> E mail should be valid</div>
+            </small>
         </div>
+        
+
+       
         <div class="field">
             <label for="password">Password</label>
             <input type="password" 
@@ -20,8 +27,12 @@
              name="password"
              placeholder="Type your password"
               />
+              <small *ngIf = "password.invalid && (email.dirty || email.touched) " 
+              class="block p-error ">
+                
+              </small>
         </div>
-        <p-button label="Sign IN" styleClass="w-full"></p-button>
+        <p-button label="Sign in" styleClass="w-full"></p-button>
         <div class="mt-2">
             Not a member? <a routerLink="/register" > Register</a>
         </div>

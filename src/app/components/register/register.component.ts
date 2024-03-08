@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { passwordMathValidator } from '../../shared/password-math-directive';
 
 @Component({
   selector: 'app-register',
@@ -8,13 +9,16 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class RegisterComponent {
 
+  private namePattern: RegExp = /^[a-zA-Z\s]*$/;
 
   registerForm = this.fb.group({
-    fullName:['',[Validators.required,Validators.pattern(/^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/)]],
+    fullName:['',[Validators.required,Validators.pattern(this.namePattern)]],
     email:['', [Validators.required,Validators.email]],
      password:['', Validators.required],
      confirmPassword:['',Validators.required]
-
+  },{
+    validators: passwordMathValidator
+ 
 
   })
   constructor(private fb:FormBuilder){}

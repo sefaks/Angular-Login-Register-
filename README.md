@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+ User Login and Registration Form with the following concepts:
+1. Node JS Installation
+2. Angular CLI Installation
+3. Angular project creation using ng new with Routing
+4. PrimeNG, Primeicons, PrimeFlex installation and setup
+5. Angular cli component, service, interface, guard creation
+6. Set up routing for different pages
+7. Add the primeNG components like input , button
+8. Create Reactive form with Validation
+9. Create a custom validator for password and confirm password check
+10. Submit the Forms
+11. Logout
+12. CanActivateFn implementations and applying Guar

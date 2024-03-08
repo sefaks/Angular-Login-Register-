@@ -5,6 +5,12 @@
       "fullName": "sefa",
       "email": "sefakose10@hotmail.com",
       "password": "1234"
+    },
+    {
+      "id": "a99c",
+      "fullName": "yusuf",
+      "email": "yusuf200370@ogr.duzce.edu.tr",
+      "password": "123"
     }
   ]
 }

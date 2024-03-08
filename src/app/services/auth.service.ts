@@ -7,17 +7,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl = 'http://localhost:3000';
+
+  private baseUrl = 'http://localhost:3000';
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   registerUser(userDetails: User) {
-    return this.http.post(`${this.baseUrl}/users`, userDetails)
+    return this.http.post(`${this.baseUrl}/users`, userDetails);
   }
 
-  getUserByEmail(email:string) :Observable<User[]>{
-  return this.http.get<User []>(`${this.baseUrl}/users?email=${email}`);
+  getUserByEmail(email: string): Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseUrl}/users?email=${email}`);
+  }
 
-}
+
 }

@@ -29,22 +29,21 @@ export class LoginComponent {
           return this.loginForm.controls['password'];
         }
 
-        loginUser(){
-          const{email,password} = this.loginForm.value;
+        loginUser() {
+          const { email, password } = this.loginForm.value;
           this.authService.getUserByEmail(email as string).subscribe(
-            response=>{
-              if(response.length>0 && response[0].password == password){
-                sessionStorage.setItem('email',email as string);
+            response => {
+              if (response.length > 0 && response[0].password === password) {
+                sessionStorage.setItem('email', email as string);
                 this.router.navigate(['/home']);
-              }else{
-                this.messageService.add({severity: 'error', summary:'Error',detail:'email or password is wrong'});
+              } else {
+                this.messageService.add({ severity: 'error', summary: 'Error', detail: 'email or password is wrong' });
               }
             },
-            error =>
-            {
-              this.messageService.add({severity: 'error', summary:'Error',detail:'Something went wrong'});
-
+            error => {
+              this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
             }
+      
           )
         }
-} 
+      }

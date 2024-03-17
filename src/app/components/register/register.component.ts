@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { passwordMatchValidator } from '../../shared/password-math-directive';
 import { AuthService } from '../../services/auth.service';
-import { User } from '../../interfaces/auth';
+import { User } from '../../interfaces/user';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 

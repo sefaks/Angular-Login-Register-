@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { User } from '../../interfaces/user';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { response } from 'express';
 
 @Component({
   selector: 'app-register',
@@ -54,12 +55,12 @@ export class RegisterComponent {
     const postData=this.registerForm.value;
     delete postData.confirmPassword;
     this.authService.registerUser(postData as User).subscribe(
-      response=> {
+      (      response: any) => {
         console.log(response);
         this.messageService.add({severity: 'success', summary:'Success',detail:'Register Successfully'});
         this.router.navigate(['login'])
       },
-      error=> {
+      (      error: any)=> {
 
         this.messageService.add({severity: 'error', summary:'Error',detail:'Something went wrong'});
 

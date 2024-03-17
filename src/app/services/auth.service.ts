@@ -13,7 +13,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  egisterUser(userDetails: User): Observable<any> {
+  registerUser(userDetails: User): Observable<any> {
     return this.http.post(`${this.baseUrl}/users`, userDetails).pipe(
       catchError(error => throwError('Registration failed. Please try again later.'))
     );

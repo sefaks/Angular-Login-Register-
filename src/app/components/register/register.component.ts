@@ -17,7 +17,8 @@ export class RegisterComponent {
   private namePattern: RegExp = /^[a-zA-Z\s]*$/;
 
   registerForm = this.fb.group({
-    fullName:['',[Validators.required,Validators.pattern(this.namePattern)]],
+    name:['',[Validators.required,Validators.pattern(this.namePattern)]],
+    surname:['',[Validators.required,Validators.pattern(this.namePattern)]],
     email:['', [Validators.required,Validators.email]],
      password:['', Validators.required],
      confirmPassword:['',Validators.required]
@@ -35,8 +36,11 @@ export class RegisterComponent {
     ){}
 
 
-  get fullName(){
-    return this.registerForm.controls['fullName'];
+  get name(){
+    return this.registerForm.controls['name'];
+  }
+  get surname(){
+    return this.registerForm.controls['surname'];
   }
   get email(){
 
